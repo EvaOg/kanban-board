@@ -71,13 +71,8 @@ function Home() {
 
   const navigate = useNavigate();
   const taskExplanationHandler = (text) => {
-    preventDef();
     return navigate("/:task", { state: text });
   };
-
-  function preventDef(e) {
-    e.preventDefault();
-  }
 
   //Storage readyCards
   useEffect(() => {
