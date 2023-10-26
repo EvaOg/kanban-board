@@ -15,7 +15,7 @@ const Task = ({ text }) => {
 
   const navigate = useNavigate();
   const taskExplanationHandler = () => {
-    return navigate("/");
+    return navigate("/home");
   };
 
   const addNoteHandler = (text) => {
