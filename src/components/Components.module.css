@@ -1,0 +1,263 @@
+.block {
+  background-color: #ae95b2;
+  height: fit-content;
+  min-height: 100px;
+  border-radius: 10px;
+  width: 15rem;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 60px;
+  color: #003152;
+  overflow: auto;
+  max-height: 400px;
+}
+
+.card {
+  display: flex;
+  background-color: #dacfdd;
+  color: #003152;
+  border-radius: 10px;
+  text-align: left;
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-transform: none;
+  margin: 0 0.5rem 0.8rem 0.5rem;
+  word-break: break-all;
+}
+
+.cardText {
+  width: 100%;
+  cursor: pointer;
+}
+
+.cardIcon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #003152;
+  cursor: pointer;
+  padding-top: 1px;
+}
+
+.pHeader {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnaddCard {
+  text-align: left;
+  margin-left: 0.7rem;
+  background-color: #ae95b2;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #003152;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.input {
+  border: none;
+  background-color: #dacfdd;
+}
+
+.input[type="text"]:focus {
+  outline: none;
+  border-bottom: #aeabae solid 1px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  background-color: #dacfdd;
+  margin: 0 0.6rem 0 0.6rem;
+  padding-left: 0.3rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+ul:hover {
+  background-color: #aeabae;
+}
+
+.optionsList {
+  margin-bottom: 1rem;
+}
+
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.pHeader {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.home {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.task {
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.closeIcon {
+  position: absolute;
+  margin-left: 90%;
+  margin-top: 20px;
+}
+
+.noteIcon {
+  margin-top: 2%;
+}
+
+.noteInput {
+  font-size: medium;
+  margin-top: 20px;
+  width: 70%;
+  background-color: #112d49;
+  color: #dacfdd;
+  border: none;
+  outline: none;
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  background-color: #042236;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  text-align: left;
+  color: #dacfdd;
+}
+
+.footer :first-child {
+  padding-inline: 2rem;
+}
+
+.menuText {
+  position: absolute;
+}
+
+.logo {
+  margin-right: 70px;
+  margin-top: -7px;
+}
+
+img {
+  width: 30px;
+  right: 90px;
+  position: absolute;
+}
+
+.arrow4 {
+  position: absolute;
+  cursor: pointer;
+  right: 70px;
+  width: 30px;
+  height: 30px;
+}
+.arrow4left {
+  position: absolute;
+  background-color: transparent;
+  top: 15px;
+  left: 20px;
+  width: 10px;
+  height: 2.5px;
+  display: block;
+  transform: rotate(42deg);
+  float: right;
+  border-radius: 2px;
+}
+.arrow4left:after {
+  content: "";
+  background-color: #dacfdd;
+  width: 10px;
+  height: 2.5px;
+  display: block;
+  float: right;
+  border-radius: 6px 10px 10px 6px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+
+.arrow4right {
+  position: absolute;
+  background-color: transparent;
+  top: 15px;
+  left: 26px;
+  width: 10px;
+  height: 2.5px;
+  display: block;
+  transform: rotate(-37deg);
+  float: right;
+  border-radius: 2px;
+}
+.arrow4right:after {
+  content: "";
+  background-color: #dacfdd;
+  width: 10px;
+  height: 2.5px;
+  display: block;
+  float: right;
+  border-radius: 10px 6px 6px 10px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+.openLeft {
+  transform-origin: center center;
+  transform: rotate(313deg);
+}
+.openRight {
+  transform-origin: center center;
+  transform: rotate(46deg);
+}
+
+.logInDiv {
+  background-color: #dacfdd;
+  color: #112d49;
+  border-radius: 5px;
+  position: absolute;
+  width: 100px;
+  right: 80px;
+  margin-top: 50px;
+  font-size: small;
+}
+.logInUl {
+  z-index: 2;
+  position: relative;
+}
+
+.logInUl:hover {
+  background-color: #dacfdd;
+}
+
+.triangle {
+  margin-top: -13px;
+  position: absolute;
+  right: -80px;
+  z-index: 0;
+}
