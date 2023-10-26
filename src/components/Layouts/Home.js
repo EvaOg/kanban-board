@@ -72,7 +72,9 @@ function Home() {
   const navigate = useNavigate();
   const taskExplanationHandler = (e, text) => {
     e.preventDefault();
-    return navigate("/:task", { state: text });
+    if (cards.length > 0) {
+      navigate("/:task", { state: text });
+    }
   };
 
   //Storage readyCards
