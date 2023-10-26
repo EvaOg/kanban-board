@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <CartProvider>
           <Routes>
-            <Route path="/home" element={<MainLayout />}>
+            <Route path="/" element={<MainLayout />}>
               {" "}
               <Route index element={<Home />} />
               <Route path="/:task" element={<Task />} />
