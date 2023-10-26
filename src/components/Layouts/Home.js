@@ -70,7 +70,8 @@ function Home() {
   }
 
   const navigate = useNavigate();
-  const taskExplanationHandler = (text) => {
+  const taskExplanationHandler = (event, text) => {
+    event.preventDefault();
     return navigate("/home/:task", { state: text });
   };
 
