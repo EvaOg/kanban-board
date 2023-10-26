@@ -142,6 +142,7 @@ ul:hover {
 }
 
 .footer {
+  position: fixed;
   display: flex;
   flex-direction: row;
   background-color: #042236;
