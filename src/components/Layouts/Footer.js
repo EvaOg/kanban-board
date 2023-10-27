@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <p>Active tasks: {cards.length}</p>
+      <p>Backlog tasks: {cards.length}</p>
       <p>Finished tasks: {finishedCards.length} </p>
     </footer>
   );

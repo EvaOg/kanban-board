@@ -1,9 +1,9 @@
 import styles from "../Components.module.css";
 
-function InProgress({ readyCards, addtoInProgress }) {
+function InProgress({ cards, addtoInProgress }) {
   return (
     <div className={styles.optionsList}>
-      {readyCards.map((el) => (
+      {cards.map((el) => (
         <ul>
           <li
             key={el.id}

@@ -9,9 +9,6 @@ import Header from "./Header";
 import CreateCard from "../backlog/CreateCard";
 import CardsList from "../backlog/CardsList";
 
-import Option from "../ready/Option";
-import ReadyCardList from "../ready/ReadyCardList";
-
 import InProgress from "../inProgress/InProgress";
 import InProgressCardList from "../inProgress/InProgressCardList";
 
@@ -31,8 +28,7 @@ function Home() {
     finishedCards,
     deleteFinishedCardHandler,
   } = useContext(CartContext);
-  const [option, setOption] = useState(false);
-  const [readyCards, setReadyCards] = useState([]);
+
   const [inProgress, setInProgress] = useState(false);
   const [inProgressCards, setInProgressCards] = useState([]);
   const [finished, setFinished] = useState(false);
@@ -47,18 +43,18 @@ function Home() {
     setComponent([]);
   };
 
-  function addtoReadyHandler(x) {
-    if (cards && cards.length > 0) {
-      const newReadyCard = cards.find((card) => x === card.id);
-      setCards(cards.filter((card) => card.id !== x));
-      setReadyCards([...readyCards, newReadyCard]);
-      setOption(!option);
-    }
-  }
+  // function addtoReadyHandler(x) {
+  //   if (cards && cards.length > 0) {
+  //     const newReadyCard = cards.find((card) => x === card.id);
+  //     setCards(cards.filter((card) => card.id !== x));
+  //     setReadyCards([...readyCards, newReadyCard]);
+  //     setOption(!option);
+  //   }
+  // }
 
   function addtoInProgressHandler(x) {
-    const newInProgressCard = readyCards.find((card) => x === card.id);
-    setReadyCards(readyCards.filter((card) => card.id !== x));
+    const newInProgressCard = cards.find((card) => x === card.id);
+    setCards(cards.filter((card) => card.id !== x));
     setInProgressCards([...inProgressCards, newInProgressCard]);
     setInProgress(!inProgress);
   }
@@ -75,17 +71,17 @@ function Home() {
   };
 
   //Storage readyCards
-  useEffect(() => {
-    const data3 = window.localStorage.getItem("readyCardsStorage");
-    if (data3 !== null) setReadyCards(JSON.parse(data3));
-  }, []);
+  // useEffect(() => {
+  //   const data3 = window.localStorage.getItem("readyCardsStorage");
+  //   if (data3 !== null) setReadyCards(JSON.parse(data3));
+  // }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem(
-      "readyCardsStorage",
-      JSON.stringify(readyCards),
-    );
-  }, [readyCards]);
+  // useEffect(() => {
+  //   window.localStorage.setItem(
+  //     "readyCardsStorage",
+  //     JSON.stringify(readyCards),
+  //   );
+  // }, [readyCards]);
 
   //Storage inProgressCards
   useEffect(() => {
@@ -125,7 +121,7 @@ function Home() {
         </div>
       </div>
 
-      <div className={styles.block}>
+      {/* <div className={styles.block}>
         <Header headerName={"ready"} />
         <div className={styles.cardsList}>
           <ReadyCardList
@@ -140,7 +136,7 @@ function Home() {
           )}
           {option && <Option addtoReady={addtoReadyHandler} cards={cards} />}
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.block}>
         <Header headerName={"in progress"} />
@@ -149,7 +145,7 @@ function Home() {
             inProgressCards={inProgressCards}
             taskExplanation={taskExplanationHandler}
           />
-          {readyCards.length > 0 && (
+          {cards.length > 0 && (
             <Button
               onClick={() => setInProgress(!inProgress)}
               className={styles.btnaddCard}
@@ -158,7 +154,7 @@ function Home() {
           {inProgress && (
             <InProgress
               addtoInProgress={addtoInProgressHandler}
-              readyCards={readyCards}
+              cards={cards}
             />
           )}
         </div>

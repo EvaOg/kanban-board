@@ -1,10 +1,6 @@
 import styles from "../Components.module.css";
 
-function InProgressCardList({
-  inProgressCards,
-  deleteCardfromReady,
-  taskExplanation,
-}) {
+function InProgressCardList({ inProgressCards, taskExplanation }) {
   return inProgressCards.map((card) => (
     <div className={styles.card}>
       <div
