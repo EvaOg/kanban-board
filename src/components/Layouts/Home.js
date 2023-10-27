@@ -70,9 +70,8 @@ function Home() {
   }
 
   const navigate = useNavigate();
-  const taskExplanationHandler = (event, text) => {
-    event.preventDefault();
-    return navigate("/home/:task", { state: text });
+  const taskExplanationHandler = (text) => {
+    return navigate("/:task", { state: text });
   };
 
   //Storage readyCards
@@ -84,7 +83,7 @@ function Home() {
   useEffect(() => {
     window.localStorage.setItem(
       "readyCardsStorage",
-      JSON.stringify(readyCards)
+      JSON.stringify(readyCards),
     );
   }, [readyCards]);
 
@@ -97,7 +96,7 @@ function Home() {
   useEffect(() => {
     window.localStorage.setItem(
       "inProgressCardsStorage",
-      JSON.stringify(inProgressCards)
+      JSON.stringify(inProgressCards),
     );
   }, [inProgressCards]);
 

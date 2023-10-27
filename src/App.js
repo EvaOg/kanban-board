@@ -15,10 +15,10 @@ function App() {
       <div className="App">
         <CartProvider>
           <Routes>
-            <Route path="/home" element={<MainLayout />}>
+            <Route path="/" element={<MainLayout />}>
               {" "}
               <Route index element={<Home />} />
-              <Route path="/home/:task" element={<Task />} />
+              <Route path="/:task" element={<Task />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
