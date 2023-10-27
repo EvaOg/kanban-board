@@ -43,15 +43,6 @@ function Home() {
     setComponent([]);
   };
 
-  // function addtoReadyHandler(x) {
-  //   if (cards && cards.length > 0) {
-  //     const newReadyCard = cards.find((card) => x === card.id);
-  //     setCards(cards.filter((card) => card.id !== x));
-  //     setReadyCards([...readyCards, newReadyCard]);
-  //     setOption(!option);
-  //   }
-  // }
-
   function addtoInProgressHandler(x) {
     const newInProgressCard = cards.find((card) => x === card.id);
     setCards(cards.filter((card) => card.id !== x));
@@ -70,20 +61,6 @@ function Home() {
     return navigate("/:task", { state: text });
   };
 
-  //Storage readyCards
-  // useEffect(() => {
-  //   const data3 = window.localStorage.getItem("readyCardsStorage");
-  //   if (data3 !== null) setReadyCards(JSON.parse(data3));
-  // }, []);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem(
-  //     "readyCardsStorage",
-  //     JSON.stringify(readyCards),
-  //   );
-  // }, [readyCards]);
-
-  //Storage inProgressCards
   useEffect(() => {
     const data4 = window.localStorage.getItem("inProgressCardsStorage");
     if (data4 !== null) setInProgressCards(JSON.parse(data4));
@@ -120,23 +97,6 @@ function Home() {
           )}
         </div>
       </div>
-
-      {/* <div className={styles.block}>
-        <Header headerName={"ready"} />
-        <div className={styles.cardsList}>
-          <ReadyCardList
-            readyCards={readyCards}
-            taskExplanation={taskExplanationHandler}
-          />
-          {cards.length > 0 && (
-            <Button
-              className={styles.btnaddCard}
-              onClick={() => setOption(!option)}
-            />
-          )}
-          {option && <Option addtoReady={addtoReadyHandler} cards={cards} />}
-        </div>
-      </div> */}
 
       <div className={styles.block}>
         <Header headerName={"in progress"} />
